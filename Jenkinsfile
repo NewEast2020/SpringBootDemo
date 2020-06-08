@@ -10,11 +10,11 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		checkout([$class: 'GitSCM', branches: [[name: '*/team-blue-sprint-3-pipeline']],
+		checkout([$class: 'GitSCM', branches: [[name: '*/soap']],
 			doGenerateSubmoduleConfigurations: false,
 			extensions: [], submoduleCfg: [],
 			userRemoteConfigs: [[credentialsId: 'Github',
-			url: 'https://github.com/springboot/springboot-identity-gateway-additude.git']]])
+			url: 'https://github.com/Sus4nne/SpringBootDemo.git']]])
 		sh "mvn clean package -DskipTests"
             }
         }
