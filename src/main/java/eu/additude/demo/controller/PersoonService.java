@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -51,6 +52,25 @@ public class PersoonService {
             throw new ResourceNotFoundException("Persoon met id " + id + " niet gevonden");
         }
         return PersoonDTO.createPersoonSOAP(persoonOptional.get());
+    }
+
+    public List<PersoonSoap> getAlleSOAPPersonen() {
+        List<Persoon> list = repository.findAll();
+
+        List<PersoonSoap> persoonSoaps = list.stream()
+                .map(persoon -> PersoonDTO.createPersoonSOAP(persoon))  //personen uit de lijst liggen op de pijnbank en die gaan we met map omzetten naar een PersoonSoap
+                .collect(Collectors.toList()); // de PersoonSoaps worden opengeslagen in een List<PersoonSoap>
+
+//        if (list.isEmpty()) {
+//            throw new ResourceNotFoundException("Lijst met personen is niet gevonden");
+//        }
+//        List<PersoonSoap> soapList = new ArrayList<>();
+//        for (Persoon persoon : list) {
+//            PersoonSoap persoonSoap = PersoonDTO.createPersoonSOAP(persoon);
+//            soapList.add(persoonSoap);
+//        }
+
+        return persoonSoaps; //soapList;
     }
 
     public List<Persoon> getAllePersonen() {

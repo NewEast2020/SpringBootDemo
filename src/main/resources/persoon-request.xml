@@ -2,7 +2,8 @@
                   xmlns:gs="http://additude.eu/guides/gs-producing-web-service">
     <soapenv:Header/>
     <soapenv:Body>
-        <gs:getAllePersonenRequest>
-        </gs:getAllePersonenRequest>
+        <gs:getPersoonRequest>
+            <gs:id>1</gs:id>
+        </gs:getPersoonRequest>
     </soapenv:Body>
 </soapenv:Envelope>

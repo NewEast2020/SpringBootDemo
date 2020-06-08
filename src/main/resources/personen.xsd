@@ -11,10 +11,26 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="getAllePersonenRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- geen zoek element-->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <xs:element name="getPersoonResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="persoon" type="tns:persoonSoap"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllePersonenResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="personenlist" type="tns:persoonSoap" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
