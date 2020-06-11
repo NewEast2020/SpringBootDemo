@@ -8,7 +8,7 @@ public class HelloWorld {
 
     @RequestMapping("/") // de ("/") is in dit geval niet persé nodig. => mapping vanaf het gedeelte achter 8080
     public String helloWorld() {
-        return "Welkom op mijn super mooie website... En nu ben ik aangepast.";
+        return "Welkom op mijn super mooie website... En nu ben ik aangepast met pipeline.";
     }
 
     @RequestMapping("/hacking") // de ("/") is in dit geval niet persé nodig. => mapping vanaf het gedeelte achter 8080
