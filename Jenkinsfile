@@ -6,15 +6,15 @@ pipeline {
 	    jdk 'jdk'
     }
 
-    stages {
+    stages { 
         stage('Build') {
             steps {
                 echo 'Building..'
-		checkout([$class: 'GitSCM', branches: [[name: '*/YOUR_BRANCH_HERE']],
+		checkout([$class: 'GitSCM', branches: [[name: '*/soap']],
 			doGenerateSubmoduleConfigurations: false,
 			extensions: [], submoduleCfg: [],
 			userRemoteConfigs: [[credentialsId: 'Github',
-			url: 'https://github.com/YOUR_GITHUB_HERE/YOUR_PROJECT_HERE.git']]])
+			url: 'https://github.com/NewEast2020/SpringBootDemo.git']]])
 		sh "mvn clean package -DskipTests"
             }
         }
