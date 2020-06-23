@@ -6,7 +6,7 @@ pipeline {
 	    jdk 'jdk'
     }
 
-    stages { 
+    stages {
         stage('Build') {
             steps {
                 echo 'Building..'

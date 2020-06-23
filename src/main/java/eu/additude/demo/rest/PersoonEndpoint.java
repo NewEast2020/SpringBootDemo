@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/personen")
 //@Slf4j // Via Lombok kun je ook op deze manier een logger krijgen, zonder de instantie
+@CrossOrigin
 public class PersoonEndpoint {
     private Logger log = LoggerFactory.getLogger(PersoonEndpoint.class);
     @Autowired
