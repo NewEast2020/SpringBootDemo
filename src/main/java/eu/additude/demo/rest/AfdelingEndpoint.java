@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/afdelingen")
 @Slf4j
+@CrossOrigin
 public class AfdelingEndpoint {
     @Autowired
     AfdelingService service;
